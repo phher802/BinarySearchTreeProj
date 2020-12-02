@@ -38,8 +38,28 @@ namespace BinarySearchTree
         }
 
 
-        public void AddNode(Node nodeToAdd)
+        public Node AddNode(Node nodeToAdd)
         {
+           
+            //if (RootNode == null)
+            //{
+            //    RootNode = nodeToAdd;
+               
+            //}
+            //else if (nodeToAdd.data <= RootNode.data)
+            //{
+
+            //    LastNode.LeftNode = nodeToAdd;
+               
+
+            //}
+            //else if (nodeToAdd.data > RootNode.data)
+            //{
+            //    LastNode.RightNode = nodeToAdd;
+            //    //LastNode = LastNode.RightNode;
+            //}
+
+            //return LastNode;
 
             if (RootNode == null)
             {
@@ -75,6 +95,7 @@ namespace BinarySearchTree
 
             }
         }
+
         public void Search(Node value)
         {
             //this.value = value;
@@ -90,10 +111,6 @@ namespace BinarySearchTree
 
         }
 
+
     }
-
-      
-
-
-    
 }
