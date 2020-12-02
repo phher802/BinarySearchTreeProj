@@ -4,34 +4,63 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ErbiumLinkedList
+namespace BinarySearchTree
 {
-    class MyLinkedList
+    class BinarySearchTree
     {
-
+        // member variables (has a)
         public Node RootNode;
         public Node LastNode;
+        public int value;
+        public List<int> _nodes;
+        //public Node left;
+        //public Node right;
 
-        public MyLinkedList()
+        //constructor (spawner)
+        public BinarySearchTree()
         {
+            List<int> _nodes = new List<int>();
 
+            //Node node1 = new Node(1);
+            //Node node2 = new Node(2);
+            //Node node3 = new Node(3);
+            //Node node4 = new Node(4);
+            //Node node5 = new Node(5);
+            //Node node6 = new Node(6);
+            //Node node7 = new Node(7);
+            //node1.AddNode(node1);
+            //node2.AddNode(node2);
+            //node3.AddNode(node3);
+            //node4.AddNode(node4);
+            //node5.AddNode(node5);
+            //node6.AddNode(node6);
+            //node7.AddNode(node7);
         }
 
 
-        public void AddNode(Node nodeToAdd)
+        public Node AddNode(Node nodeToAdd)
         {
+           
             if (RootNode == null)
             {
                 RootNode = nodeToAdd;
                 LastNode = nodeToAdd;
             }
-            else
+            else if (nodeToAdd.data <= RootNode.data)
             {
-                LastNode.NextNode = nodeToAdd;
-                LastNode = LastNode.NextNode;
+
+                LastNode.LeftNode = nodeToAdd;
+                //LastNode = LastNode.LeftNode;
+
+            }
+            else if (nodeToAdd.data > RootNode.data)
+            {
+                LastNode.RightNode = nodeToAdd;
+                //LastNode = LastNode.RightNode;
             }
 
-            //if(RootNode == null)
+            return LastNode;
+            //if (RootNode == null)
             //{
             //    RootNode = nodeToAdd;
             //}
@@ -54,5 +83,22 @@ namespace ErbiumLinkedList
 
             //}
         }
+
+        public void Search(Node value)
+        {
+            //this.value = value;
+            //bool isFound = true;
+
+            if (value == null)
+            {
+                return;
+            }
+
+            Search(value.LeftNode);
+            Search(value.RightNode);
+
+        }
+
+
     }
 }
